@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>நம்ம நாட்டார்மங்கலம் - கள்ளக்குறிச்சி மாவட்டம்</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta Malar:wght@300;400;600;700&family=Hind+Madhurai:wght@400;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', 'Hind Madurai', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin: 20px 0 10px;
+      animation: fadeInUp 1s ease 0.3s backwards;
+    }
+
+    .location {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease 0.5s backwards;
+    }
+
+    .btn {
+      background: #2d6a4f;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      animation: fadeInUp 1s ease 0.6s backwards;
+    }
+
+    .btn:hover {
+      background: #1b4332;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(14, 179, 105, 0.3);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1a1a1a; }
+    .section-subtitle { text-align: center; color: #666; margin-bottom: 60px; font-size: 1.1rem; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .about-text h3 { font-size: 2rem; margin-bottom: 20px; color: #2d6a4f; }
+    .about-text p { margin-bottom: 15px; color: #555; }
+    
+    .location-tag {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2d6a4f;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin: 5px 5px 5px 0;
+      font-weight: 600;
+    }
+
+    .stats {
+      background: #2d6a4f;
+      color: white;
+      padding: 60px 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat h3 { font-size: 3rem; color: #ffd166; }
+    .stat p { font-size: 1.1rem; opacity: 0.9; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      height: 300px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    .gallery-item::after {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 40px 20px 20px;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover { transform: translateY(-10px); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-content { padding: 25px; }
+    .card h3 { color: #2d6a4f; margin-bottom: 15px; }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer h3 { color: #ffd166; margin-bottom: 15px; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1.1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>நம்ம நாட்டார்மங்கலம்</h1>
+      <p>பசுமையும் பண்பாடும் நிறைந்த பூமி</p>
+      <p class="location">📍 கள்ளக்குறிச்சி மாவட்டம் | கள்ளக்குறிச்சி வட்டம்</p>
+      <a href="#about" class="btn">ஊர சுத்தி பாக்கலாம் வாங்க</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container">
+    <h2 class="section-title">நாட்டார்மங்கலம் பத்தி</h2>
+    <p class="section-subtitle">நம்ம ஊரு, நம்ம பெருமை</p>
+    
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800" alt="Nattarmangalam Village" class="about-img">
+      <div class="about-text">
+        <h3>ஊரின் சிறப்பு</h3>
+        <div style="margin-bottom: 20px;">
+          <span class="location-tag">📍 கள்ளக்குறிச்சி மாவட்டம்</span>
+          <span class="location-tag">📍 கள்ளக்குறிச்சி வட்டம்</span>
+          <span class="location-tag">📍 நாட்டார்மங்கலம்</span>
+        </div>
+        <p>நாட்டார்மங்கலம் - கள்ளக்குறிச்சி மாவட்டத்துல சின்னசேலம் வட்டத்துல இருக்குற அழகான கிராமம். பெயரிலேயே ஒரு பாரம்பரியம் இருக்கு.</p>
+        <p>வயலும் வரப்பும், கோவிலும் குளமும் நிறைஞ்ச அழகான ஊரு. இங்க இருக்குற மக்கள் எல்லாரும் ஒண்ணு மண்ணா பாசமா வாழுறாங்க.</p>
+        <p>விவசாயம் தான் நம்ம ஊரோட முதுகெலும்பு. நெல், கரும்பு, மஞ்சள் னு எல்லாம் விளையும் செழிப்பான பூமி இது. சின்னசேலத்துக்கு பக்கத்துல இருக்குறதால எல்லா வசதியும் கிடைக்கும்.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <h3>கள்ளக்குறிச்சி</h3>
+        <p>மாவட்டம்</p>
+      </div>
+      <div class="stat">
+        <h3>கள்ளக்குறிச்சி</h3>
+        <p>வட்டம்</p>
+      </div>
+      <div class="stat">
+        <h3>100+</h3>
+        <p>ஆண்டு பாரம்பரியம்</p>
+      </div>
+      <div class="stat">
+        <h3>100%</h3>
+        <p>அன்பு நிறைந்த மக்கள்</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Landmarks -->
+  <section class="container">
+    <h2 class="section-title">ஊரின் அடையாளங்கள்</h2>
+    <p class="section-subtitle">நாட்டார்மங்கலத்துக்கு வந்தா இத பாக்காம போகாதீங்க</p>
+    
+    <div class="cards">
+      <div class="card">
+        <img src="thiruvizha.jpg.jpg" alt="Temple">
+        <div class="card-content">
+          <h3>ஊர் கோவில்</h3>
+          <p>நம்ம ஊரோட பழமையான கோவில். திருவிழா நேரத்துல ஊரே இங்க தான் கூடும். சக்தி வாய்ந்த தெய்வம்.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" alt="Fields">
+        <div class="card-content">
+          <h3>பசுமை வயல்கள்</h3>
+          <p>கண்ணுக்கு எட்டின தூரம் வரைக்கும் பச்சை பசேல்னு வயல். காலைல இங்க நடந்தா மனசுக்கு நிம்மதி.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600" alt="Lake">
+        <div class="card-content">
+          <h3>ஊர் குளம் / ஏரி</h3>
+          <p>ஊருக்கே தண்ணி தர்ற குளம். சாயங்காலம் இங்க உக்காந்து பேசுறது தனி சுகம்.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="container">
+    <h2 class="section-title">நாட்டார்மங்கலம் Gallery</h2>
+    <p class="section-subtitle">நம்ம ஊரு அழக படம் புடிச்சு காட்டுறோம்</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" data-title="ஊர் எல்லை">
+        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600" alt="Village Entrance">
+      </div>
+      <div class="gallery-item" data-title="திருவிழா">
+        <img src="fuction.jpg.jpg" alt="Festival">
+      </div>
+      <div class="gallery-item" data-title="வயல்வெளி">
+        <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=600" alt="Fields">
+      </div>
+      <div class="gallery-item" data-title="சூரிய அஸ்தமனம்">
+        <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600" alt="Sunset">
+      </div>
+      <div class="gallery-item" data-title="ஊர் தெரு">
+        <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=600" alt="Street">
+      </div>
+      <div class="gallery-item" data-title="இயற்கை">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Nature">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h3>நம்ம நாட்டார்மங்கலம் 💚</h3>
+    <p>கள்ளக்குறிச்சி மாவட்டம் | கள்ளக்குறிச்சி வட்டம்</p>
+    <p style="margin-top: 10px;">பிறந்த மண்ணோட பெருமை. எங்க ஊருக்கு ஒரு வாட்டி வந்து பாருங்க!</p>
+    <p style="margin-top: 20px; opacity: 0.6;">© 2026 | உருவாக்கியவர்  ❤️ by கபிலன் </p>
+  </footer>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>

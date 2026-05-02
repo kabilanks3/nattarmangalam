@@ -306,7 +306,120 @@
       </div>
     </div>
   </section>
+!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2 class="section-title">தொடர்பு கொள்ள</h2>
+    <p style="text-align: center; margin-bottom: 40px; color: #666;">
+      நாட்டார்மங்கலம் பத்தி ஏதாவது சொல்லணுமா? Message அனுப்புங்க மக்களே!
+    </p>
+    
+    <div class="contact-wrapper">
+      <form action="https://formsubmit.co/geneiouskabi3@gmail.com" method="POST" class="contact-form">
+        <!-- FormSubmit Settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kabilanks3.github.io/nattarmangalam/?thanks=true">
+        <input type="hidden" name="_subject" value="நாட்டார்மங்கலம் Website ல இருந்து புது Message!">
+        
+        <div class="form-group">
+          <label>உங்க பேரு</label>
+          <input type="text" name="name" required placeholder="பேர சொல்லுங்க">
+        </div>
+        
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="email@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" required placeholder="என்ன சொல்ல வர்றீங்க?"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-submit">அனுப்பு 🚀</button>
+      </form>
+      
+      <div class="contact-info">
+        <h3>நேரடியா தொடர்புக்கு</h3>
+        <p><strong>📍 ஊரு:</strong> நாட்டார்மங்கலம், சின்னசேலம் வட்டம்</p>
+        <p><strong>📱 WhatsApp:</strong> +91 XXXXX XXXXX</p>
+        <p><strong>📧 Email:</strong> geneiouskabi3@gmail.com</p>
+        <p><strong>🕒 திருவிழா:</strong> வருஷா வருஷம் தை மாசம்</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<style>
+  .contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .form-group {
+    margin-bottom: 25px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Hind Madurai', sans-serif;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .contact-info {
+    padding: 40px;
+  }
+  .contact-info h3 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+  .contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
   <!-- Footer -->
   <footer>
     <h3>நம்ம நாட்டார்மங்கலம் 💚</h3>

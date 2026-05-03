@@ -454,6 +454,28 @@
   }
 </style>
 
+<!-- Visitors Counter -->
+<div style="text-align: center; padding: 30px 0 10px 0; background: #f8f9fa; border-top: 1px solid #eee;">
+  <p style="margin: 0; font-size: 18px; color: #333;">
+    👀 இந்த Website அ <span id="visits" style="font-weight: 700; color: #FF6F00; font-size: 22px;">0</span> பேர் பார்வையிட்டுள்ளனர்
+  </p>
+</div>
+
+<script>
+  // Free Visitors Counter for Nattarmangalam
+  fetch('https://api.countapi.xyz/hit/nattarmangalam-kabilanks3/visits')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visits').innerText = data.value.toLocaleString('en-IN');
+    })
+    .catch(err => {
+      document.getElementById('visits').innerText = '1';
+    });
+</script>
+
+<!-- Footer -->
+<footer>
+
   <!-- Footer -->
   <footer>
     <h3>நம்ம நாட்டார்மங்கலம் 💚</h3>
